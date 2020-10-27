@@ -1,0 +1,26 @@
+<!--pages/comment/comment.wxml-->
+<import src="comment-tpl.wxml" />
+
+<view class="comment-title">
+  <text>评论区(共{{total}}条)</text>
+</view>
+<view wx:if="{{topComments!=0}}" class="title">
+  <view class="txt">置顶评论</view>
+<block wx:for="{{topComments}}" wx:for-item="comment">
+  <template is="topComments" data="{{comment}}" />
+</block>
+</view>
+
+<view wx:if="{{hotComments!=0}}" class="title">
+  <view class="txt">热门评论</view>
+<block wx:if="{{hotComments!=0}}" wx:for="{{hotComments}}" wx:for-item="comment">
+  <template is="hotComments" data="{{comment}}" />
+</block>
+</view>
+
+<view class="title">
+  <view class="txt">最新评论</view>
+<block wx:for="{{comments}}" wx:for-item="comment">
+  <template is="comments" data="{{comment}}" />
+</block>
+</view>

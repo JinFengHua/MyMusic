@@ -1,0 +1,59 @@
+<template name="topComments">
+  <view class="comment-area">
+    <view class="comment-head">
+      <view class="avatar">
+        <image src="{{comment[1]}}"></image>
+      </view>
+      <view class="center">
+        <view class="username">{{comment[0]}}</view>
+        <view class="create-time">{{comment[2]}}</view>
+      </view>
+      <view class="zan">
+        <image src="/images/zan.png"></image>
+        {{comment[4]}}
+      </view>
+    </view>
+    <view class="comment-body">{{comment[3]}}
+    </view>
+</view>
+</template>
+
+<template name="hotComments">
+  <view class="comment-area">
+    <view class="comment-head">
+      <view class="avatar">
+        <image src="{{comment[1]}}"></image>
+      </view>
+      <view class="center">
+        <view class="username">{{comment[0]}}</view>
+        <view class="create-time">{{comment[2]}}</view>
+      </view>
+      <view class="zan">
+        <image src="/images/zan.png"></image>
+        {{comment[4]}}
+      </view>
+    </view>
+    <view class="comment-body">{{comment[3]}}
+    </view>
+</view>
+</template>
+
+<template name="comments">
+  <view class="comment-area">
+    <view class="comment-head">
+      <view class="avatar">
+        <image src="{{comment[1]}}"></image>
+      </view>
+      <view class="center">
+        <view class="username">{{comment[0]}}</view>
+        <view class="create-time">{{comment[2]}}</view>
+      </view>
+      <view class="zan">
+        <image src="/images/zan.png"></image>
+        {{comment[4]}}
+      </view>
+    </view>
+    <view class="comment-body">{{comment[3]}}
+    </view>
+</view>
+</template>

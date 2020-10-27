@@ -1,0 +1,5 @@
+<!--pages/welcome/welcome.wxml-->
+<image class="welcome" src="/images/welcome.jpg"/>
+<!-- <view class="access">
+<text>立即体验</text>
+</view> -->

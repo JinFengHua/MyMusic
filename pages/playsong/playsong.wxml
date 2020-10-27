@@ -1,0 +1,40 @@
+<!--pages/playsong/playsong.wxml-->
+<view class="content">
+  <image class="bg_pic" src="{{song.album.picUrl}}" />
+  <view class="title">{{song.name}}</view>
+  <view class="middle">
+    <swiper class="swiper-area">
+      <swiper-item class="cd">
+        <view class="cd-image">
+          <image style="animation-play-state:{{state}}" src="{{song.album.picUrl}}" />
+        </view>
+      </swiper-item>
+      <!-- 歌词区域 -->
+      <swiper-item>
+        <scroll-view class="lyric" scroll-y="true" scroll-with-animation="true" scroll-top="{{marginTop}}">
+          <view class="acontentArray">
+            <block wx:for="{{lyricArray}}" wx:for-item="lyric" wx:for-index="index">
+              <text class="{{currentIndex==index?'currentLyric':''}}">{{lyric[1]}}</text>
+            </block>
+          </view>
+        </scroll-view>
+      </swiper-item>
+    </swiper>
+  </view>
+  <!-- 进度条 -->
+  <view class="progress">
+    <view class="start-time">{{playTime}}</view>
+    <slider backgroundColor="#fff" bindchange="drag" value="{{move}}" activeColor="#D82000" block-size="14" max="{{max}}"></slider>
+    <view class="end-time">{{endTime}}</view>
+  </view>
+  <view class="controls">
+    <image bindtap="changeMode" src="/images/{{mode=='single'?'single':'loop'}}.png" />
+    <image bindtap="prevSong" src="/images/prev.png" />
+    <image bindtap="playOrPause" src="/images/{{state=='running'?'pause':'play2'}}.png" />
+    <image bindtap="nextSong" src="/images/next.png" />
+    <image bindtap="showComment" src="/images/comment.png" />
+  </view>
+</view>
+
+<audio bindended="changeMusic" wx:if="http://music.163.com/song/media/outer/url?id={{id}}.mp3" action="{{action}}" bindtimeupdate="changeTime" src="http://music.163.com/song/media/outer/url?id={{id}}.mp3">
+</audio>

@@ -1,0 +1,50 @@
+<!--pages/playmv/playmv.wxml-->
+<view class="container">
+  <view class="video-area">
+    <video src="{{mvAdd[current_Definition]}}" loop="true" page-gesture="true" direction="90" show-fullscreen-btn="true" />
+    <view class="definition">
+      <picker bindchange="bindPickerChange" value="{{mvDefinition}}" range="{{mvDefinition}}">
+        <view class="button">{{current_Definition}}p</view>
+      </picker>
+    </view>
+    <view class="mv-title">
+      <view>
+        <text class="mv-name">{{mvData.name}}</text>
+      </view>
+      <view class="mv-data">
+        <view>
+          <text>{{viewNum}}次观看</text>
+        </view>
+        <view>
+          <text>{{mvData.publishTime}}日发布</text>
+        </view>
+      </view>
+    </view>
+    <view style="margin-left:20rpx;">{{mvData.briefDesc}}</view>
+    <view wx:if="{{mvData.desc!=''}}" class="mv-body">
+      <view class="desc">{{mvData.desc}}</view>
+    </view>
+    <view class="tool">
+      <view class="tool-item">
+        <image src="/images/zan.png" />{{mvData.likeCount}}</view>
+      <view class="tool-item">
+        <image src="/images/shoucang.png" />{{mvData.subCount}}</view>
+      <view class="tool-item"  bindtap="showComment">
+        <image src="/images/pinglun.png" />{{mvData.commentCount}}</view>
+      <view class="tool-item">
+        <image src="/images/fenxiang.png" />{{mvData.shareCount}}</view>
+    </view>
+    <view class="song-title">相关音乐：</view>
+    <view>
+      <view class="song-area">
+        <image class="albumpic" src="{{pic}}" />
+        <view class="song-area-center">
+          <view class="title">{{sname}}
+          </view>
+          <view class="artists">{{artists}}-《{{album}}》</view>
+        </view>
+        <image class="play-button" src="/images/play.png" data-id="{{songid}}" catchtap="goToPlay" />
+      </view>
+    </view>
+  </view>
+</view>

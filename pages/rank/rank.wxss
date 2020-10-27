@@ -1,0 +1,64 @@
+/* pages/rank/rank.wxss */
+@import '../songlist/songlist.wxss';
+
+.rank{
+  width: 90rpx;
+  height: 120rpx;
+  margin: auto 10rpx;
+  line-height: 100rpx;
+  font-size: 45rpx;
+  color: gray;
+  text-align: center;
+}
+
+.play-button {
+  height: 100rpx;
+  border-radius: 10rpx;
+  margin-left: 70rpx;
+  margin-top: 20rpx;
+}
+
+.ranktitle{
+  width: 100%;
+  height: 400rpx;
+  display: flex;
+}
+
+.rankcontent{
+  width: 100%;
+  height: auto;
+  margin-top: -40rpx;
+  border-radius: 50rpx;
+  background: white;
+}
+
+.img{
+  width: 230rpx;
+  height: 230rpx;
+  margin: 40rpx;
+}
+
+.img image{
+  width: 100%;
+  height: 100%;
+}
+
+.rank-detail{
+  width: 420rpx;
+  height: 230rpx;
+  margin: 40rpx 0rpx;
+  color: white
+}
+
+.rank-detail .rank-head{
+  font-size:45rpx; 
+  font-weight: 500;
+  width: 100%;
+  height: 80rpx;
+}
+
+.rank-detail .detail{
+  width: 100%;
+  height: 150rpx;
+  font-size: 30rpx;
+}

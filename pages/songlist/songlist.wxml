@@ -1,0 +1,72 @@
+<view class="paihang-title">
+  <view style="margin:10rpx;">榜单</view>
+</view>
+<view class="paihang">
+  <view class="b">
+    <view class="a" style="border-right: 1px #D82000 solid;" bindtap="goToRank" data-rank="19723756">
+      <view class="tupian">
+        <image src="/images/biaosheng.png" />
+      </view>
+      <view class="name">云音乐飙升榜</view>
+      <view class="gengxin">每天更新</view>
+    </view>
+    <view class="a" bindtap="goToRank" data-rank="3779629">
+      <view class="tupian">
+        <image src="/images/xinge.png" />
+      </view>
+      <view class="name">云音乐新歌榜</view>
+      <view class="gengxin">每天更新</view>
+    </view>
+  </view>
+  <view class="b">
+    <view class="a" style="border-right: 1px #D82000 solid;" bindtap="goToRank" data-rank="2884035">
+      <view class="tupian">
+        <image src="/images/yuanchuang.png" />
+      </view>
+      <view class="name">网易原创歌曲榜</view>
+      <view class="gengxin">每周四更新</view>
+    </view>
+    <view class="a" bindtap="goToRank" data-rank="3778678">
+      <view class="tupian">
+        <image src="/images/rege.png" />
+      </view>
+      <view class="name">云音乐热歌榜</view>
+      <view class="gengxin">每周四更新</view>
+    </view>
+  </view>
+</view>
+
+<view style="margin:20rpx 10rpx;font-size:50rpx;">搜索</view>
+
+<view class="input-area">
+  <view class="input-left">
+    <image src="/images/search.png" />
+    <input bindinput="getKeyWord" placeholder="请输入想要搜索的内容" bindconfirm="doSearch"></input>
+  </view>
+  <view catchtap="doSearch" class="input-right">
+    <text>搜索</text>
+  </view>
+</view>
+
+<block wx:for="{{songs}}" wx:for-item="song" wx:for-index="i">
+  <view wx:if="{{i%2==0}}" class="song-area">
+    <image class="albumpic" src="{{albumPicUrls[i]}}" />
+    <view class="song-area-center">
+      <view class="title">{{song.name}}
+      </view>
+      <image wx:if="{{mvs[i][1]!=0}}" class="mvpic" src="/images/mv3.png" data-mvid="{{mvs[i][1]}}" catchtap="goToMv" />
+      <view class="artists">{{artistsName[i]}}-《{{song.album.name}}》</view>
+    </view>
+    <image class="play-button" src="/images/play.png" data-id="{{song.id}}" catchtap="goToPlay" />
+  </view>
+  <view wx:else class="song-area-odd">
+    <image class="albumpic" src="{{albumPicUrls[i]}}" />
+    <view class="song-area-center">
+      <view class="title">{{song.name}}
+        <image wx:if="{{mvs[i][1]!=0}}" class="mvpic" src="/images/mv3.png" data-mvid="{{mvs[i][1]}}" catchtap="goToMv" />
+      </view>
+      <view class="artists">{{artistsName[i]}} 《{{song.album.name}}》</view>
+    </view>
+    <image class="play-button" src="/images/play.png" data-id="{{song.id}}" catchtap="goToPlay" />
+  </view>
+</block>

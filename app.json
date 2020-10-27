@@ -1,0 +1,19 @@
+{
+  "pages": [
+    "pages/welcome/welcome",
+    "pages/songlist/songlist",
+    "pages/playsong/playsong",
+    "pages/playmv/playmv",
+    "pages/comment/comment",
+    "pages/rank/rank"
+  ],
+  "window": {
+    "backgroundTextStyle": "dark",
+    "navigationBarBackgroundColor": "#D82000",
+    "navigationBarTitleText": "网易云音乐",
+    "navigationBarTextStyle": "white",
+    "enablePullDownRefresh": true
+  },
+  "style": "v2",
+  "sitemapLocation": "sitemap.json"
+}
